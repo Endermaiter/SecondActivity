@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         changeButton.setOnClickListener {
             //Creamos un intent que inicia la camara cuando pulsamos el boton
             val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            //llamamos a la activity del tlf.
+            //llamamos a la activity de la camara
             startActivityForResult(intent, RESULT_CAMERA)
         }
     }
