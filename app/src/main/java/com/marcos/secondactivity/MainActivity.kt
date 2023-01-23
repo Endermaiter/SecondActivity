@@ -11,19 +11,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        // El botón para iniciar el teléfono
         val changeButton = findViewById<Button>(R.id.changeButton)
-        // numero de telefono al que queremos llamar
         val url = findViewById<EditText>(R.id.textUrl)
 
 
         changeButton.setOnClickListener {
-            // creamos un intent específico que iniciará el teléfono
+            // creamos un intent que abre el navegador
             val intent = Intent(Intent.ACTION_VIEW)
-            // rellenamos el intent con el número
+            // le damos al intent la url que queremos
             intent.data = Uri.parse(url.text.toString())
-            // llamamos a la activity treléfono
+            // iniciamos la activity del navegador con la url
             startActivity(intent)
         }
     }
